@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "gallery"
+  },
+  "extends": "expo/tsconfig.base",
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+}
