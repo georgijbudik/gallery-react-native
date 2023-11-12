@@ -1,6 +1,6 @@
 import { PayloadAction, SerializedError, createSlice } from "@reduxjs/toolkit";
 import { fetchPhotos } from "./photoOperations";
-import { IPhoto } from "../../pages/Gallery";
+import { IPhoto } from "../../screens/Gallery";
 
 interface InitialState {
   photos: IPhoto[];

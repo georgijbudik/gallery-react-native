@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from "react";
-import { FlatList, Text, TouchableOpacity } from "react-native";
+import { FlatList, Text, TouchableOpacity, RefreshControl } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPhotos } from "../redux/photos/photoOperations";
 import {
@@ -12,7 +12,7 @@ import GalleryItem from "../components/GalleryItem";
 import Loader from "../components/Loader";
 import { AppDispatch } from "../redux/photos/store";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../App";
+import { RootStackParamList } from "../components/Navigation/Navigation";
 
 export interface IPhoto {
   id: string;
@@ -49,6 +49,9 @@ const Gallery: FC = () => {
   return (
     <FlatList
       data={photos}
+      refreshControl={
+        <RefreshControl refreshing={isLoading} onRefresh={fetchPhotos} />
+      }
       keyExtractor={(item) => item.id}
       renderItem={({ item }: { item: IPhoto }) => (
         <TouchableOpacity

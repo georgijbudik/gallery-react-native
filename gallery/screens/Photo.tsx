@@ -1,8 +1,8 @@
-import { Image, View } from "react-native";
-import { styles } from "../styles/styles";
+import { View } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../App";
+import { RootStackParamList } from "../components/Navigation/Navigation";
 import { FC } from "react";
+import { BigPhoto } from "./Photo.styled";
 
 type PhotoProps = NativeStackScreenProps<RootStackParamList, "Photo">;
 
@@ -12,7 +12,7 @@ const Photo: FC<PhotoProps> = ({ route }) => {
   } = route.params;
   return (
     <View>
-      <Image source={{ uri: urls.full }} style={styles.bigPhoto} />
+      <BigPhoto source={{ uri: urls.full }} />
     </View>
   );
 };

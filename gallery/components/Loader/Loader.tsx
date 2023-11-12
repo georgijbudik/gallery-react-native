@@ -1,19 +1,15 @@
-import { View } from "react-native";
 import { ActivityIndicator, MD2Colors } from "react-native-paper";
+import { LoaderView } from "./Loader.styled";
 
 const Loader = () => {
   return (
-    <View
-      style={{
-        paddingTop: 300,
-      }}
-    >
+    <LoaderView>
       <ActivityIndicator
         animating={true}
         color={MD2Colors.blue700}
         size={"large"}
       />
-    </View>
+    </LoaderView>
   );
 };
 

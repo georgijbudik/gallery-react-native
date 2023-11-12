@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "./store";
-import { IPhoto } from "../../pages/Gallery";
+import { IPhoto } from "../../screens/Gallery";
 
 const ACCES_KEY = "jNvTjxr7i6a9LffOYoUthOaWfeKNXTZBFgxcfTNrpUI";
 

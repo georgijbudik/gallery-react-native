@@ -1,7 +1,11 @@
-import { View } from "react-native";
-import { Card, Paragraph, Title } from "react-native-paper";
-import { styles } from "../../styles/styles";
+import { Card } from "react-native-paper";
 import { FC } from "react";
+import {
+  Author,
+  Description,
+  GalleryItemView,
+  SmallPhoto,
+} from "./GalleryItem.styled";
 
 interface GalleryItemProps {
   item: {
@@ -19,19 +23,15 @@ const GalleryItem: FC<GalleryItemProps> = ({
   item: { user, description, urls },
 }) => {
   return (
-    <View style={styles.container}>
-      <Card style={{ ...styles.margin, width: 350 }}>
-        <Card.Content style={styles.margin}>
-          <Title style={{ fontWeight: "bold" }}>Author: {user.username}</Title>
-          <Paragraph>
-            {description ? `Description: ${description}` : "No description"}
-          </Paragraph>
-        </Card.Content>
-        <View style={styles.container}>
-          <Card.Cover source={{ uri: urls.thumb }} style={styles.smallPhoto} />
-        </View>
-      </Card>
-    </View>
+    <GalleryItemView>
+      <SmallPhoto source={{ uri: urls.thumb }} />
+      <Card.Content style={{ flex: 1 }}>
+        <Author>Author: {user.username}</Author>
+        <Description>
+          {description ? `Description: ${description}` : "No description"}
+        </Description>
+      </Card.Content>
+    </GalleryItemView>
   );
 };
 
